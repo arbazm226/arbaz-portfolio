@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111c2e"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2dd4bf" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#2dd4bf"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1010" cy="150" r="270" fill="#2dd4bf" opacity=".035"/>
+  <path d="M0 520h1200M0 440h1200M0 360h1200M0 280h1200" stroke="#9eb4d3" stroke-opacity=".08"/>
+  <path d="M670 450c65-8 80-48 141-42s79-59 140-51 83-71 139-75 72-54 110-88" fill="none" stroke="url(#line)" stroke-width="5"/>
+  <circle cx="1060" cy="282" r="8" fill="#2dd4bf"/>
+  <text x="94" y="196" fill="#2dd4bf" font-family="Arial,sans-serif" font-size="21" font-weight="700" letter-spacing="5">FINANCE · FORECASTING · BUSINESS INTELLIGENCE</text>
+  <text x="90" y="314" fill="#f2f6fc" font-family="Arial,sans-serif" font-size="70" font-weight="600" letter-spacing="-3">Arbaz Malik</text>
+  <text x="94" y="373" fill="#a7b4c8" font-family="Arial,sans-serif" font-size="28">Forecasting Specialist | Financial Intelligence</text>
+  <rect x="94" y="426" width="64" height="4" rx="2" fill="#2dd4bf"/>
+  <text x="94" y="478" fill="#8291a6" font-family="Arial,sans-serif" font-size="19">United Kingdom</text>
+</svg>
