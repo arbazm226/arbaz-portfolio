@@ -24,7 +24,7 @@ export const profile = {
   headline: "Forecasting Specialist | Financial Intelligence",
   location: "United Kingdom",
   email: "arbazm74@gmail.com",
-  linkedIn: "https://www.linkedin.com/in/arbaz-malik915850198/",
+  linkedIn: "https://www.linkedin.com/in/arbaz-malik-915850198/",
   summary:
     "MBA graduate with professional placement and internship experience in financial reporting, forecasting, SOX controls, and SAP-based data analysis. Experienced in stakeholder support, variance analysis, project financial data, and translating financial information into clear, decision-ready insights.",
   heroSummary:
