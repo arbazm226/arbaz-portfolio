@@ -39,7 +39,9 @@ const presentationUrl =
   "https://portfolio-sigma-seven-bj1jcrzh7c.vercel.app/Documents/IFRS-18-Changes-Impact-and-Benefits.pptx";
 
 const presentationPreviewUrl =
-  `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(presentationUrl)}`;
+  `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(
+    `${presentationUrl}?v=0b2eb82`
+  )}`;
 
   return (
     <div className="page-wrap">
