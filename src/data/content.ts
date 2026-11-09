@@ -263,4 +263,14 @@ export const projects: Project[] = [
     status: "Academic research · details limited",
     tools: ["Applied research", "Structured analysis"],
   },
+
+  {
+    slug: "ifrs-18-changes-impact-benefits",
+    title: "IFRS 18 – Changes, Impact and Benefits",
+    category: "Financial Analysis",
+    summary:
+      "An overview of IFRS 18 covering the new presentation requirements, operating, investing and financing categories, management-defined performance measures, and implications for financial reporting.",
+    status: "Financial reporting presentation",
+    tools: ["IFRS 18", "Financial Reporting", "Financial Analysis"],
+  },
 ];

@@ -1,4 +1,5 @@
-import { ArrowLeft, ArrowUpRight, CircleHelp } from "lucide-react";
+
+import { ArrowLeft, ArrowUpRight, CircleHelp, Download, FileText } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageIntro } from "@/components/ui";
@@ -28,7 +29,14 @@ export default async function ProjectDetailPage({
 }) {
   const { slug } = await params;
   const project = projects.find((item) => item.slug === slug);
+
   if (!project) notFound();
+
+  const isIfrsPresentation =
+    project.slug === "ifrs-18-changes-impact-benefits";
+
+  const presentationUrl =
+    "/Documents/IFRS-18-Changes-Impact-and-Benefits.pptx";
 
   return (
     <div className="page-wrap">
@@ -36,50 +44,130 @@ export default async function ProjectDetailPage({
         <Link className="back-link" href="/projects">
           <ArrowLeft size={15} aria-hidden="true" /> All portfolio concepts
         </Link>
+
         <PageIntro
           eyebrow={`${project.category} · ${project.status}`}
           title={project.title}
           description={project.summary}
         />
-        <article className="project-detail">
-          <div className="project-detail-banner">
-            <CircleHelp size={25} aria-hidden="true" />
-            <div>
-              <p className="eyebrow">Proposed portfolio work</p>
-              <h2>This concept is not presented as a completed project.</h2>
+
+        {isIfrsPresentation ? (
+          <article className="project-detail">
+            <div className="project-detail-banner">
+              <FileText size={25} aria-hidden="true" />
+              <div>
+                <p className="eyebrow">Presentation available</p>
+                <h2>IFRS 18 – Changes, Impact and Benefits</h2>
+              </div>
             </div>
-          </div>
-          <div className="project-detail-content">
-            <section>
-              <p className="eyebrow">Overview</p>
-              <p>
-                This is a proposed portfolio direction. No completed deliverable,
-                employer data, analysis results, or performance findings have
-                been supplied for publication.
+
+            <div className="project-detail-content">
+              <section>
+                <p className="eyebrow">About this presentation</p>
+                <p>
+                  This presentation explores IFRS 18 and its implications
+                  for financial statement presentation and disclosure.
+                  It is provided here as a portfolio resource.
+                </p>
+              </section>
+
+              <section>
+                <p className="eyebrow">Topics and skills</p>
+                <ul className="tag-list">
+                  {project.tools.map((tool) => (
+                    <li key={tool}>{tool}</li>
+                  ))}
+                </ul>
+              </section>
+
+              <section>
+                <p className="eyebrow">Access the presentation</p>
+                <p>
+                  Open the original PowerPoint presentation or download
+                  a copy for offline viewing.
+                </p>
+
+                <p>
+                  <a
+                    className="text-link"
+                    href={presentationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FileText size={16} aria-hidden="true" />
+                    Open PowerPoint presentation
+                    <ArrowUpRight size={15} aria-hidden="true" />
+                  </a>
+                </p>
+
+                <p>
+                  <a
+                    className="text-link"
+                    href={presentationUrl}
+                    download="IFRS-18-Changes-Impact-and-Benefits.pptx"
+                  >
+                    <Download size={16} aria-hidden="true" />
+                    Download PowerPoint
+                  </a>
+                </p>
+              </section>
+            </div>
+          </article>
+        ) : (
+          <article className="project-detail">
+            <div className="project-detail-banner">
+              <CircleHelp size={25} aria-hidden="true" />
+              <div>
+                <p className="eyebrow">Proposed portfolio work</p>
+                <h2>This concept is not presented as a completed project.</h2>
+              </div>
+            </div>
+
+            <div className="project-detail-content">
+              <section>
+                <p className="eyebrow">Overview</p>
+                <p>
+                  This is a proposed portfolio direction. No completed deliverable,
+                  employer data, analysis results, or performance findings have
+                  been supplied for publication.
+                </p>
+              </section>
+
+              <section>
+                <p className="eyebrow">Planned focus</p>
+                <ul className="responsibility-list">
+                  <li>{project.summary}</li>
+                  <li>
+                    Build a clear, reproducible example using authorised or
+                    explicitly synthetic materials.
+                  </li>
+                  <li>
+                    Document assumptions, methodology, limitations, and findings
+                    after the work is completed.
+                  </li>
+                </ul>
+              </section>
+
+              <section>
+                <p className="eyebrow">Tools and skills</p>
+                <ul className="tag-list">
+                  {project.tools.map((tool) => (
+                    <li key={tool}>{tool}</li>
+                  ))}
+                </ul>
+              </section>
+
+              <p className="content-note">
+                Dataset, assumptions, visualisations, findings, and downloads
+                will be added only when verified project materials are available.
               </p>
-            </section>
-            <section>
-              <p className="eyebrow">Planned focus</p>
-              <ul className="responsibility-list">
-                <li>{project.summary}</li>
-                <li>Build a clear, reproducible example using authorised or explicitly synthetic materials.</li>
-                <li>Document assumptions, methodology, limitations, and findings after the work is completed.</li>
-              </ul>
-            </section>
-            <section>
-              <p className="eyebrow">Tools and skills</p>
-              <ul className="tag-list">
-                {project.tools.map((tool) => <li key={tool}>{tool}</li>)}
-              </ul>
-            </section>
-            <p className="content-note">
-              Dataset, assumptions, visualisations, findings, and downloads will
-              be added only when verified project materials are available.
-            </p>
-          </div>
-        </article>
+            </div>
+          </article>
+        )}
+
         <Link className="text-link project-detail-return" href="/projects">
-          Return to portfolio concepts <ArrowUpRight size={15} aria-hidden="true" />
+          Return to portfolio concepts{" "}
+          <ArrowUpRight size={15} aria-hidden="true" />
         </Link>
       </div>
     </div>
