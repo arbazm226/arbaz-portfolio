@@ -35,8 +35,11 @@ export default async function ProjectDetailPage({
   const isIfrsPresentation =
     project.slug === "ifrs-18-changes-impact-benefits";
 
-  const presentationUrl =
-    "/Documents/IFRS-18-Changes-Impact-and-Benefits.pptx";
+const presentationUrl =
+  "https://portfolio-sigma-seven-bj1jcrzh7c.vercel.app/Documents/IFRS-18-Changes-Impact-and-Benefits.pptx";
+
+const presentationPreviewUrl =
+  `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(presentationUrl)}`;
 
   return (
     <div className="page-wrap">
@@ -90,7 +93,7 @@ export default async function ProjectDetailPage({
                 <p>
                   <a
                     className="text-link"
-                    href={presentationUrl}
+                    href={presentationPreviewUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
