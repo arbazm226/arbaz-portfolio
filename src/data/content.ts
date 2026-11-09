@@ -264,13 +264,19 @@ export const projects: Project[] = [
     tools: ["Applied research", "Structured analysis"],
   },
 
-  {
-    slug: "ifrs-18-changes-impact-benefits",
-    title: "IFRS 18 – Changes, Impact and Benefits",
-    category: "Financial Analysis",
-    summary:
-      "An overview of IFRS 18 covering the new presentation requirements, operating, investing and financing categories, management-defined performance measures, and implications for financial reporting.",
-    status: "Financial reporting presentation",
-    tools: ["IFRS 18", "Financial Reporting", "Financial Analysis"],
-  },
+
+{
+  slug: "ifrs-18-changes-impact-benefits",
+  title: "IFRS 18 – Changes, Impact and Benefits",
+  category: "Financial Analysis",
+  summary:
+    "An in-depth financial reporting presentation examining the transition from IAS 1 to IFRS 18, including the new presentation categories, mandatory profit subtotals, management-defined performance measures, disclosure requirements, cash flow implications, and organisational impact.",
+  status: "Completed financial reporting presentation",
+  tools: [
+    "IFRS 18",
+    "IAS 1",
+    "Financial Reporting",
+    "Financial Statement Analysis",
+  ],
+},
 ];
